@@ -1,0 +1,35 @@
+{
+  "CartHeader": {
+    "xpath": "//*[@text='YOUR CART']"
+  },
+  "MenuButton": {
+    "xpath": "//*[@content-desc='test-Menu']"
+  },
+  "CartButton": {
+    "xpath": "//*[@content-desc='test-Cart']"
+  },
+  "CartContent": {
+    "xpath": "//*[@content-desc='test-Cart Content']"
+  },
+  "CartItem": {
+    "xpath": "//*[@content-desc='test-Item']"
+  },
+  "ItemQuantity": {
+    "xpath": "//*[@content-desc='test-Amount']"
+  },
+  "ItemDescription": {
+    "xpath": "//*[@content-desc='test-Description']"
+  },
+  "ItemPrice": {
+    "xpath": "//*[@content-desc='test-Price']"
+  },
+  "RemoveButton": {
+    "xpath": "//*[@content-desc='test-REMOVE']"
+  },
+  "ContinueShoppingButton": {
+    "xpath": "//*[@content-desc='test-CONTINUE SHOPPING']"
+  },
+  "CheckoutButton": {
+    "xpath": "//*[@content-desc='test-CHECKOUT']"
+  }
+}

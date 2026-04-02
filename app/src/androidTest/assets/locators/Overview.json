@@ -1,0 +1,29 @@
+{
+  "OverviewHeader": {
+    "xpath": "//*[@text='CHECKOUT: OVERVIEW']"
+  },
+  "CartItem": {
+    "xpath": "//*[@content-desc='test-Item']"
+  },
+  "PaymentInfoLabel": {
+    "xpath": "//*[@text='Payment Information:']"
+  },
+  "ShippingInfoLabel": {
+    "xpath": "//*[@text='Shipping Information:']"
+  },
+  "ItemTotal": {
+    "xpath": "//*[contains(@text, 'Item total:')]"
+  },
+  "Tax": {
+    "xpath": "//*[contains(@text, 'Tax:')]"
+  },
+  "Total": {
+    "xpath": "//*[contains(@text, 'Total:')]"
+  },
+  "CancelButton": {
+    "xpath": "//*[@content-desc='test-CANCEL']"
+  },
+  "FinishButton": {
+    "xpath": "//*[@content-desc='test-FINISH']"
+  }
+}

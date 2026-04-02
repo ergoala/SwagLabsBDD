@@ -1,0 +1,17 @@
+{
+  "UsernameField": {
+    "xpath": "//*[@content-desc='test-Username']"
+  },
+  "PasswordField": {
+    "xpath": "//*[@content-desc='test-Password']"
+  },
+  "LoginButton": {
+    "xpath": "//*[@content-desc='test-LOGIN']"
+  },
+  "ErrorMessage": {
+    "xpath": "//*[@content-desc='test-Error message']"
+  },
+  "ProductsTitle": {
+    "xpath": "//*[@text='PRODUCTS']"
+  }
+}

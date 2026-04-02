@@ -1,0 +1,32 @@
+{
+  "MenuButton": {
+    "xpath": "//*[@content-desc='test-Menu']"
+  },
+  "CartButton": {
+    "xpath": "//*[@content-desc='test-Cart']"
+  },
+  "ProductsHeader": {
+    "xpath": "//*[@text='PRODUCTS']"
+  },
+  "LayoutToggleButton": {
+    "xpath": "//*[@content-desc='test-Toggle']"
+  },
+  "FilterButton": {
+    "xpath": "//*[@content-desc='test-Modal Selector Button']"
+  },
+  "ProductItem": {
+    "xpath": "//*[@content-desc='test-Item']"
+  },
+  "ProductTitle": {
+    "xpath": "//*[@content-desc='test-Item title']"
+  },
+  "ProductPrice": {
+    "xpath": "//*[@content-desc='test-Price']"
+  },
+  "AddToCartButton": {
+    "xpath": "//*[@content-desc='test-ADD TO CART']"
+  },
+  "DragHandle": {
+    "xpath": "//*[@content-desc='test-Drag Handle']"
+  }
+}

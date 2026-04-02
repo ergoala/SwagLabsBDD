@@ -1,0 +1,20 @@
+{
+  "CheckoutInfoHeader": {
+    "xpath": "//*[@text='CHECKOUT: INFORMATION']"
+  },
+  "FirstNameField": {
+    "xpath": "//*[@content-desc='test-First Name']"
+  },
+  "LastNameField": {
+    "xpath": "//*[@content-desc='test-Last Name']"
+  },
+  "ZipCodeField": {
+    "xpath": "//*[@content-desc='test-Zip/Postal Code']"
+  },
+  "CancelButton": {
+    "xpath": "//*[@content-desc='test-CANCEL']"
+  },
+  "ContinueButton": {
+    "xpath": "//*[@content-desc='test-CONTINUE']"
+  }
+}

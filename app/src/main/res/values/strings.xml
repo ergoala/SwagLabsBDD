@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="welcome_msg">¡Swag Labs Cargado con Éxito!</string>
+    <string name="username_hint">Usuario</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="login_btn">Ingresar</string>
+</resources>

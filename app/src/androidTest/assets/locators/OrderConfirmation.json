@@ -1,0 +1,14 @@
+{
+  "ConfirmationHeader": {
+    "xpath": "//*[@text='CHECKOUT: COMPLETE!']"
+  },
+  "ThankYouMessage": {
+    "xpath": "//*[@text='THANK YOU FOR YOU ORDER']"
+  },
+  "DispatchMessage": {
+    "xpath": "//*[@text='Your order has been dispatched, and will arrive just as fast as the pony can get there!']"
+  },
+  "BackHomeButton": {
+    "xpath": "//*[@content-desc='test-BACK HOME']"
+  }
+}
