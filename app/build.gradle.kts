@@ -19,6 +19,8 @@ android {
 
     buildTypes {
         debug {
+            isDebuggable = true // Fuerza que sea depurable
+            isMinifyEnabled = false // Asegura que el código no esté ofuscado
             enableUnitTestCoverage = true
         }
     }

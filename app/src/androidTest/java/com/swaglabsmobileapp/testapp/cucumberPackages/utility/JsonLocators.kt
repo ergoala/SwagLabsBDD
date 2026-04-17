@@ -6,16 +6,10 @@ import java.io.InputStream
 
 class JsonLocators {
 
-    /**
-     * Retrieves the locator value (e.g., xpath) from a JSON file in assets.
-     * @param filePath Relative path to the file (e.g., "locators/Login.json")
-     * @param elementKey Name of the element (e.g., "UsernameField")
-     * @param locatorType Type of locator (defaults to "xpath")
-     * @return The locator value or null if not found
-     */
     fun getLocator(filePath: String, elementKey: String, locatorType: String = "xpath"): String? {
         return try {
             val jsonString = readJsonFromAssets(filePath)
+            if (jsonString.isEmpty()) return null
             val jsonObject = JSONObject(jsonString)
             
             if (jsonObject.has(elementKey)) {
@@ -25,22 +19,23 @@ class JsonLocators {
                 } else null
             } else null
         } catch (e: Exception) {
-            e.printStackTrace()
             null
         }
     }
 
-    /**
-     * Reads a JSON file from the assets folder.
-     */
     private fun readJsonFromAssets(filePath: String): String {
         return try {
-            val context = InstrumentationRegistry.getInstrumentation().context
-            val inputStream: InputStream = context.assets.open(filePath)
-            inputStream.bufferedReader().use { it.readText() }
+            // Intentar con el contexto de instrumentación (donde suelen estar los assets de test)
+            val testContext = InstrumentationRegistry.getInstrumentation().context
+            testContext.assets.open(filePath).bufferedReader().use { it.readText() }
         } catch (e: Exception) {
-            e.printStackTrace()
-            ""
+            try {
+                // Intentar con el contexto de la aplicación
+                val targetContext = InstrumentationRegistry.getInstrumentation().targetContext
+                targetContext.assets.open(filePath).bufferedReader().use { it.readText() }
+            } catch (e2: Exception) {
+                ""
+            }
         }
     }
 }
