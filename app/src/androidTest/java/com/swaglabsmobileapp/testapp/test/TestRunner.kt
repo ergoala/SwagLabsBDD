@@ -6,6 +6,7 @@ import io.cucumber.junit.CucumberOptions
 @CucumberOptions(
     features = ["features"],
     glue = ["com.swaglabsmobileapp.testapp.cucumberPackages"],
+    tags = "@E2E",
     plugin = ["pretty"]
 )
 
