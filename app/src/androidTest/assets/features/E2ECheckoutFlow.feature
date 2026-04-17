@@ -1,3 +1,4 @@
+@E2E
 Feature: End-to-End Checkout Flow
 
   Background:
@@ -13,7 +14,7 @@ Feature: End-to-End Checkout Flow
     Then User should see the product in the cart
     When User clicks on the "CHECKOUT" button
     And User enters checkout information with first name "John", last name "Doe" and zip code "12345"
-    And User clicks on the "CONTINUE" button
+    And User clicks on the "CONTINUE" button in Checkout page
     Then User should see the "CHECKOUT: OVERVIEW" page
-    When User clicks on the "FINISH" button
+    When User clicks on the "FINISH" button in Overview page
     Then User should see the "THANK YOU FOR YOU ORDER" confirmation message

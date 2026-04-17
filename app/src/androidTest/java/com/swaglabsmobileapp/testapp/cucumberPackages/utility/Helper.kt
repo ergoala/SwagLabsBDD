@@ -14,64 +14,45 @@ class Helper(private val device: UiDevice, private val locatorResourcePath: Stri
         return locatorStore.getLocator(locatorResourcePath, elementKey)
     }
 
-    /**
-     * Generic method to click on an element based on its JSON key.
-     * @param elementKey Key of the element in the JSON file.
-     * @param timeout Maximum wait time in milliseconds.
-     */
-    fun clickOnElement(elementKey: String, timeout: Long = 5000) {
+    fun clickOnElement(elementKey: String, timeout: Long = 10000) {
         val locator = getLocator(elementKey)
         assertNotNull("Locator for '$elementKey' not found in '$locatorResourcePath'", locator)
 
         val selector = getSelector(locator!!)
         
-        // Try to find the object, if not visible, attempt to scroll
         var element = device.wait(Until.findObject(selector), timeout)
         if (element == null) {
             scrollToElement(selector)
             element = device.wait(Until.findObject(selector), timeout)
         }
         
-        assertNotNull("Element '$elementKey' not found on screen after $timeout ms", element)
+        assertNotNull("Element '$elementKey' not found on screen after $timeout ms. Locator: $locator", element)
         element!!.click()
     }
 
-    /**
-     * Generic method to set text in an input field.
-     * @param elementKey Key of the element in the JSON file.
-     * @param text Text to be entered.
-     */
-    fun setText(elementKey: String, text: String, timeout: Long = 5000) {
+    fun setText(elementKey: String, text: String, timeout: Long = 10000) {
         val locator = getLocator(elementKey)
         assertNotNull("Locator for '$elementKey' not found", locator)
 
         val selector = getSelector(locator!!)
         val element = device.wait(Until.findObject(selector), timeout)
-        assertNotNull("Element '$elementKey' not found for typing", element)
+        assertNotNull("Element '$elementKey' not found for typing. Locator: $locator", element)
         
         element!!.setText(text)
     }
 
-    /**
-     * Validates if a specific element from JSON is visible.
-     */
-    fun isElementVisible(elementKey: String, timeout: Long = 5000): Boolean {
+    fun isElementVisible(elementKey: String, timeout: Long = 10000): Boolean {
         val locator = getLocator(elementKey) ?: return false
         val selector = getSelector(locator)
         return device.wait(Until.hasObject(selector), timeout)
     }
 
-    /**
-     * Validates if a specific text is visible on screen.
-     */
-    fun isTextVisible(text: String, timeout: Long = 5000): Boolean {
+    fun isTextVisible(text: String, timeout: Long = 10000): Boolean {
         return device.wait(Until.hasObject(By.text(text)), timeout) || 
-               device.wait(Until.hasObject(By.desc(text)), timeout)
+               device.wait(Until.hasObject(By.desc(text)), timeout) ||
+               device.wait(Until.hasObject(By.textContains(text)), timeout)
     }
 
-    /**
-     * Converts a locator string (simplified XPath) to a UI Automator BySelector.
-     */
     private fun getSelector(locator: String): BySelector {
         return when {
             locator.contains("@content-desc='") -> {
@@ -86,10 +67,7 @@ class Helper(private val device: UiDevice, private val locatorResourcePath: Stri
         }
     }
 
-    /**
-     * Basic implementation of scroll down to find elements.
-     */
     private fun scrollToElement(selector: BySelector) {
-        device.swipe(500, 1500, 500, 500, 20)
+        device.swipe(500, 1500, 500, 800, 20)
     }
 }

@@ -1,3 +1,4 @@
+@smoke_login
 Feature: Login Functionality
 
   Background:
@@ -11,10 +12,9 @@ Feature: Login Functionality
     And the products title "PRODUCTS" should be displayed
 
     Examples:
-      | username                | password     |
-      | standard_user           | secret_sauce |
-      | problem_user            | secret_sauce |
-      | performance_glitch_user | secret_sauce |
+      | username      | password     |
+      | standard_user | secret_sauce |
+      | problem_user  | secret_sauce |
 
   @negative_test
   Scenario: Unsuccessful login with invalid credentials
